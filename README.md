@@ -13,7 +13,6 @@
 ```nix
 # e.g. best performance
 loaded-nvim = {
-  did_load_filetypes = true;
   did_load_ftplugin = true;
   did_indent_on = true;
   did_install_default_menus = true;

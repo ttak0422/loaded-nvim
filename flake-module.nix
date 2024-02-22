@@ -7,7 +7,6 @@ in {
       let
         inherit (lib) mkOption mkEnableOption types;
         runtime = {
-          did_load_filetypes = mkEnableOption "did_load_filetypes";
           did_load_ftplugin = mkEnableOption "did_load_ftplugin";
           did_indent_on = mkEnableOption "did_indent_on";
           did_install_default_menus =
@@ -52,11 +51,7 @@ in {
         cfg = config.loaded-nvim;
 
         excludeFiles = flatten
-          ((if cfg.did_load_filetypes then [ "runtime/ftplugin.vim" ] else [ ])
-            ++ (if cfg.did_load_ftplugin then
-              [ "runtime/ftplugof.vim" ]
-            else
-              [ ])
+          ((if cfg.did_load_ftplugin then [ "runtime/ftplugin.vim" ] else [ ])
             ++ (if cfg.did_indent_on then [ "runtime/indent.vim" ] else [ ])
             ++ (if cfg.did_install_default_menus then
               [ "runtime/menu.vim" ]
