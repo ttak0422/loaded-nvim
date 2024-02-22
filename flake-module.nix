@@ -96,14 +96,14 @@ in {
                                 [ "runtime/plugin/zipPlugin.vim" ]
                               else
                                 [ ]));
-        fixupCommands =
+        postInstallCommands =
           map (target: "rm $out/share/nvim/${target}") excludeFiles;
       in {
         packages.loaded-nvim = cfg.package.overrideAttrs (old: {
           version = "loaded";
           postInstall = ''
             ${if old ? postInstall then old.postInstall else ""}
-            ${concatStringsSep "\n" fixupCommands}
+            ${concatStringsSep "\n" postInstallCommands}
           '';
         });
       };
