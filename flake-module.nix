@@ -69,7 +69,7 @@ in {
               [ "runtime/plugin/matchit.vim" ]
             else
               [ ]) ++ (if cfg.loaded_matchparen then
-                [ "runtime/plugin/matchparen" ]
+                [ "runtime/plugin/matchparen.vim" ]
               else
                 [ ]) ++ (if cfg.loaded_netrwPlugin then
                   [ "runtime/plugin/netrwPlugin.vim" ]
