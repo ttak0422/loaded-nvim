@@ -92,7 +92,7 @@ in {
                               else
                                 [ ]));
         postInstallCommands =
-          map (target: "rm $out/share/nvim/${target}") excludeFiles;
+          map (target: "rm -f $out/share/nvim/${target}") excludeFiles;
       in {
         packages.loaded-nvim = cfg.package.overrideAttrs (old: {
           version = "loaded";
