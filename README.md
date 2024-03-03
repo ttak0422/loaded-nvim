@@ -13,6 +13,7 @@
 ```nix
 # e.g. best performance
 loaded-nvim = {
+  package = pkgs.neovim-unwrapped; # (default)
   did_load_ftplugin = true;
   did_indent_on = true;
   did_install_default_menus = true;
