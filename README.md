@@ -42,18 +42,19 @@ imports = [ inputs.loaded-nvim.flakeModule ];
 loaded-nvim = {
   # ...
 };
+loaded-nvim' = {
+  foo = {
+    # ...
+  };
+};
 
-# loaded-nvim provides a `loaded-nvim` package that you set up.
+# loaded-nvim provides `loaded-nvim` and `loaded-nvim-XXXX` packages that you set up.
 #
 # └───packages
-#     ├───aarch64-darwin
-#     │   └───loaded-nvim: package 'neovim-unwrapped-loaded'
-#     ├───aarch64-linux
-#     │   └───loaded-nvim omitted (use '--all-systems' to show)
-#     ├───x86_64-darwin
-#     │   └───loaded-nvim omitted (use '--all-systems' to show)
-#     └───x86_64-linux
-#         └───loaded-nvim omitted (use '--all-systems' to show)
-# 
+#     └───<system>
+#         ├───loaded-nvim: package
+#         └───loaded-nvim-foo: package
+#
 # e.g. package = self.packages.${system}.loaded-nvim;
+# e.g. package = self.packages.${system}.loaded-nvim-foo;
 ```
